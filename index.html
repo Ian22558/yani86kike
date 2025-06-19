@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KIYAN MUSIC</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <style>
+    
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif; /* Fuente neutra para todo excepto título */
+      background:
+        radial-gradient(circle at 20% 30%, #ff4d4d 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #cc3366 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #ff99cc 0%, transparent 60%),
+        #330000;
+      color: white;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      height: calc(860 / 1400 * 100vw);
+      max-height: 400px;
+      min-height: 250px;
+    }
+    header {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: calc(860 / 1400 * 100vw);
+  max-height: 400px;
+  min-height: 250px;
+  border-bottom: 3px solid #00ffff; /* borde entre header y body */
+}
+
+    nav {
+      background-color: rgba(50, 0, 0, 0.8);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: Arial, sans-serif;
+    }
+
+    nav a {
+      color: #00ffff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      color: #ff4d4d;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon svg {
+      fill: #00ffff;
+      transition: fill 0.3s ease;
+    }
+
+    .social-icon:hover svg {
+      fill: #ff4d4d;
+      cursor: pointer;
+    }
+
+    header .bg-carousel {
+      position: absolute;
+      top: 0; left: 0;
+      width: 300vw;
+      height: 100%;
+      display: flex;
+      animation: scrollCarousel 15s linear infinite;
+      z-index: 0;
+    }
+
+    header .bg-carousel img {
+      width: 100vw;
+      height: 100%;
+      object-fit: contain;
+      flex-shrink: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes scrollCarousel {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-200vw); }
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 20px;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+    }
+
+    .header-content img {
+      height: 60%;
+      max-height: 120px;
+      object-fit: contain;
+    }
+
+    /* Solo el nombre de la página en fuente manuscrita */
+    .header-content h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5em;
+      color: #00ffff;
+      margin: 0;
+      white-space: nowrap;
+      flex-grow: 1;
+    }
+
+    /* El resto usa Arial u otra sans-serif */
+    nav {
+      background-color: rgba(50, 0, 0, 0.8);
+      padding: 10px 0;
+      text-align: center;
+      font-family: Arial, sans-serif; /* fuente normal */
+    }
+
+    nav a {
+      color: #00ffff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 1.5em;
+      transition: color 0.5s ease, transform 0.5s ease;
+      display: inline-block;
+    }
+    .info-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: rgba(50, 0, 0, 0.8);
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffff;
+  color: #00ffff;
+  font-family: Arial, sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 1.5;
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.info-container:hover {
+  box-shadow: 0 0 25px #ff4d4d;
+}
+
+
+    nav a:hover {
+      color: #ff4d4d;
+      transform: scale(1.2) rotate(2deg);
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      padding: 40px 10vw;
+      gap: 30px;
+      border-bottom: 1px solid #660000;
+      flex-wrap: wrap;
+      color: white;
+      font-family: Arial, sans-serif; /* fuente normal */
+    }
+    /* Título animado para Artistas Destacados */
+.artistas-titulo {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  color: #00ffff;
+  margin: 40px 0 20px 0;
+  animation: colorPulse 3s infinite alternate ease-in-out;
+  user-select: none;
+}
+
+@keyframes colorPulse {
+  0% { color: #00ffff; text-shadow: 0 0 5px #00ffff; }
+  50% { color: #ff4d4d; text-shadow: 0 0 20px #ff4d4d; }
+  100% { color: #00ffff; text-shadow: 0 0 5px #00ffff; }
+}
+
+.artistas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 10vw 60px 10vw;
+}
+.tabla-artistas {
+  width: 90%;
+  margin: 40px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 15px #00ffff;
+  background-color: rgba(50, 0, 0, 0.8);
+  color: #00ffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.titulo-artistas {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  color: #00ffff;
+  margin: 60px 0 30px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff4d4d;
+  animation: glow 3s infinite alternate ease-in-out;
+  user-select: none;
+}
+
+@keyframes glow {
+  0% {
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+  }
+  50% {
+    color: #ff4d4d;
+    text-shadow: 0 0 20px #ff4d4d;
+  }
+  100% {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+}
+
+
+.tabla-artistas thead {
+  background-color: #330000;
+}
+
+.tabla-artistas th, .tabla-artistas td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #00ffff;
+}
+
+.tabla-artistas a {
+  color: #ff4d4d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tabla-artistas a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+
+.artista-item {
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  animation: fadeZoomIn 1s ease forwards;
+  opacity: 0;
+}
+
+.artista-item:nth-child(1) { animation-delay: 0.1s; }
+.artista-item:nth-child(2) { animation-delay: 0.3s; }
+.artista-item:nth-child(3) { animation-delay: 0.5s; }
+.artista-item:nth-child(4) { animation-delay: 0.7s; }
+.artista-item:nth-child(5) { animation-delay: 0.9s; }
+.artista-item:nth-child(6) { animation-delay: 1.1s; }
+
+.artista-item img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ffff;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.artista-item img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.artista-text {
+  margin-top: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 1.2em;
+  color: #00ffff;
+  user-select: none;
+  text-align: center;
+}
+
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+    .section:nth-child(odd) {
+      flex-direction: row;
+    }
+
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .section img {
+      width: 45%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00ffff;
+      object-fit: cover;
+    }
+
+    .section .text {
+      flex: 1;
+      font-size: 1.2em;
+      line-height: 1.6;
+      min-width: 280px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #330000;
+      color: #aaa;
+      font-size: 0.9em;
+      font-family: Arial, sans-serif; /* fuente normal */
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        flex-direction: column !important;
+      }
+      .section img {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 20px;
+      }
+      .header-content h1 {
+        font-size: 2.5em;
+      }
+      nav a {
+        font-size: 1.2em;
+        margin: 0 10px;
+      }
+    }
+
+    /* Botón flotante de reproductor de música */
+    .music-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.8);
+      border: 2px solid #00ffff;
+      border-radius: 30px;
+      padding: 8px 20px;
+      color: #00ffff;
+      font-family: Arial, sans-serif; /* normal para botón también */
+      font-weight: bold;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      z-index: 9999;
+      box-shadow: 0 0 12px #00ffff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .music-floating:hover {
+      background: #00ffff;
+      color: #330000;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    .music-floating button {
+      background: transparent;
+      border: none;
+      color: inherit;
+      font-size: 1.6em;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Estilos para el formulario */
+    #contactForm {
+      background-color: rgba(50, 0, 0, 0.8);
+      padding: 20px;
+      margin: 20px auto 40px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      color: #00ffff;
+      font-family: Arial, sans-serif;
+    }
+    #contactForm h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Pacifico', cursive;
+      color: #ff4d4d;
+    }
+    #contactForm form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    #contactForm label {
+      flex-basis: 100%;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    #contactForm input,
+    #contactForm select,
+    #contactForm textarea {
+      flex-basis: 48%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+    }
+    #contactForm textarea {
+      flex-basis: 100%;
+      resize: vertical;
+      min-height: 100px;
+    }
+    #contactForm button {
+      flex-basis: 100%;
+      background-color: #ff4d4d;
+      border: none;
+      padding: 15px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    #contactForm button:hover {
+      background-color: #cc0033;
+    }
+
+    /* Mapa */
+    #map {
+      width: 90%;
+      max-width: 900px;
+      height: 350px;
+      margin: 0 auto 30px auto;
+      border: 3px solid #00ffff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    @media (max-width: 900px) {
+      #contactForm input,
+      #contactForm select {
+        flex-basis: 100%;
+      }
+    }
+    /* Título centrado, color y animación */
+.artistas-titulo {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  color: #00ffff;
+  margin: 40px 0 20px;
+  animation: coloresLetra 4s infinite alternate;
+}
+
+@keyframes coloresLetra {
+  0% { color: #00ffff; text-shadow: 0 0 5px #00ffff; }
+  50% { color: #ff4d4d; text-shadow: 0 0 15px #ff4d4d; }
+  100% { color: #cc3366; text-shadow: 0 0 10px #cc3366; }
+}
+
+/* Grid para las 6 imágenes y textos centrados */
+.artistas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 10vw 60px 10vw;
+}
+
+.artista {
+  width: 320px;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  animation: animacionImagen 2s ease forwards;
+  opacity: 0;
+}
+
+/* Animación fade-in con retraso distinto por cada imagen */
+.artista:nth-child(1) { animation-delay: 0.2s; }
+.artista:nth-child(2) { animation-delay: 0.6s; }
+.artista:nth-child(3) { animation-delay: 1s; }
+.artista:nth-child(4) { animation-delay: 1.4s; }
+.artista:nth-child(5) { animation-delay: 1.8s; }
+.artista:nth-child(6) { animation-delay: 2.2s; }
+
+@keyframes animacionImagen {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.artista img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ffff;
+  transition: transform 0.3s ease;
+}
+
+.artista:hover img {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.artista p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+
+  </style>
+
+</head>
+<body>
+    <!-- Modal de AVISO -->
+<div id="modalAviso" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #000000, #000066); color: #00ffff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; font-family: Arial, sans-serif; z-index: 9999;">
+  <h1 style="font-size: 5em; margin-bottom: 0.3em;">AVISO</h1>
+  <p style="font-size: 1.5em; max-width: 800px; line-height: 1.6; color: #ffffff;">
+    Esta página tiene como misión y función darte la mejor recomendación de música diariamente. <br><br>
+    Esta página guarda todos los derechos de los artistas, compañías y disqueras.
+  </p>
+  <button id="btnCerrarAviso" style="margin-top: 50px; font-size: 1.4em; padding: 15px 30px; border: none; border-radius: 10px; background: #00ffff; color: #000000; cursor: pointer; font-weight: bold; box-shadow: 0 0 10px #00ffff;">
+    ENTENDIDO
+  </button>
+</div>
+
+    
+
+  <header>
+    <div class="bg-carousel">
+      <img src="RAUW.jpeg" alt="Galaxy 1" />
+      <img src="LENNY.jpeg" alt="Galaxy 2" />
+      <img src="TIAGO.jpeg" alt="Galaxy 3" />
+    </div>
+    <div class="header-content">
+      <img src="logoky.jpeg" alt="Logo KIYAN MUSIC" />
+      <h1>KIYAN MUSIC</h1>
+    </div>
+    <nav>
+    <div class="social-buttons">
+      <a href="https://www.instagram.com/kan_vega09?igsh=M3czamVxYTFnN3dt" target="_blank" aria-label="Instagram" class="social-icon instagram" rel="noopener noreferrer">
+        <!-- Instagram SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-2.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/share/19Gn2zJkxC/" target="_blank" aria-label="Facebook" class="social-icon facebook" rel="noopener noreferrer">
+        <!-- Facebook SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M22 12a10 10 0 1 0-11.6 9.85v-6.96h-2.3v-2.9h2.3v-2.21c0-2.27 1.35-3.53 3.41-3.53.99 0 2.02.18 2.02.18v2.23h-1.14c-1.13 0-1.48.7-1.48 1.42v1.91h2.51l-.4 2.9h-2.11v6.96A10 10 0 0 0 22 12z"/>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@kike.zombie?_t=ZS-8xI9ZUQf4H2&_r=1" target="_blank" aria-label="TikTok" class="social-icon tiktok" rel="noopener noreferrer">
+        <!-- TikTok SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M12.5 2v6.44a3.5 3.5 0 1 1-3.5-3.5h.75v7.75a5.5 5.5 0 1 0 5.5 5.5V7.25h2.5V2h-5.25z"/>
+        </svg>
+      </a>
+    </div>
+    </nav>
+  </header>
+
+  <section class="info-container">
+  <p>
+    En esta página encontrarás a los mejores artistas del momento, las mejores canciones y los mejores reproductores para la ocasión. Síguenos en todas nuestras redes sociales para que no te pierdas de nada.
+  </p>
+</section>
+
+  
+ <section id="galeria">
+  <h2 class="artistas-titulo">Artistas Destacados</h2>
+
+  <div class="artistas-grid">
+    <div class="artista" data-audio="audio/todo.mp3">
+      <img src="rauwd.jpeg" alt="Imagen 1" />
+      <p>Rauw Alejandro Número 6 en artistas latinos con más oyentes mensuales:
+      Rauw Alejandro alcanzó el número 6 en la lista de artistas latinos con más oyentes mensuales en Spotify</p>
+    </div>
+    <div class="artista" data-audio="audio/hola.mp3">
+      <img src="LENNY.jpeg" alt="Imagen 2" />
+      <p>Lenny Tavárez cuenta con aproximadamente 17.14 millones de 
+        oyentes mensuales en Spotify y ha acumulado un total de 12.5 mil millones de reproducciones en la plataforma.</p>
+    </div>
+    <div class="artista" data-audio="audio/rubi.mp3">
+      <img src="peso.jpg" alt="Imagen 3" />
+      <p>Oyentes mensuales: más de 50 millones. Posición global: 7° artista más escuchado en 2024.</p>
+    </div>
+    <div class="artista" data-audio="audio/sino.mp3">
+      <img src="cris.jpeg" alt="Imagen 4" />
+      <p>Cris MJ: alrededor de 35 millones de oyentes mensuales en mayo 2025. Top 10 hispano mundial en 2024.</p>
+    </div>
+    <div class="artista" data-audio="audio/Diles.mp3">
+      <img src="badb.jpeg" alt="Imagen 5" />
+      <p>≈ 83 millones de oyentes. #10 global. Más de 89 000 millones de streams. “DTMF” #1 global por 14 días.</p>
+    </div>
+    <div class="artista" data-audio="audio/amor.mp3">
+      <img src="natanel.jpeg" alt="Imagen 6" />
+      <p>Natanael Cano: más de 24 millones de oyentes mensuales. Figura clave de los corridos tumbados.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const artistas = document.querySelectorAll('.artista');
+  let audio1 = null;
+  let currentPlaying = null; // Guarda el artista que está reproduciendo
+
+  artistas.forEach(artista => {
+    artista.addEventListener('click', () => {
+      const src = artista.getAttribute('data-audio');
+
+      // Si se clickeó el mismo artista que está reproduciendo
+      if (currentPlaying === artista) {
+        if (audio1 && !audio1.paused) {
+          audio1.pause(); // Pausar la música
+        } else if (audio1) {
+          audio1.play(); // Reproducir si está pausado
+        }
+      } else {
+        // Si clickeamos otro artista, pausamos la actual y reproducimos la nueva
+        if (audio1) {
+          audio1.pause();
+          audio1.currentTime = 0;
+        }
+        audio1 = new Audio(src);
+        audio1.play();
+        currentPlaying = artista;
+      }
+    });
+  });
+</script>
+<h1 class="titulo-artistas">Tus artistas favoritos y en donde escucharlos</h1>
+
+<table class="tabla-artistas">
+  <thead>
+    <tr>
+      <th>Artista</th>
+      <th>Género</th>
+      <th>País</th>
+      <th>Top Canción</th>
+      <th>Año Destacado</th>
+      <th>Escúchalo en</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rauw Alejandro</td>
+      <td>Reguetón / Trap</td>
+      <td>Puerto Rico</td>
+      <td>Todo de Ti</td>
+      <td>2021</td>
+      <td><a href="https://open.spotify.com" target="_blank">Spotify</a></td>
+    </tr>
+    <tr>
+      <td>Lenny Tavárez</td>
+      <td>Reguetón</td>
+      <td>Puerto Rico</td>
+      <td>La Neta</td>
+      <td>2021</td>
+      <td><a href="https://music.youtube.com" target="_blank">YouTube Music</a></td>
+    </tr>
+    <tr>
+      <td>Peso Pluma</td>
+      <td>Corridos Tumbados</td>
+      <td>México</td>
+      <td>Ella Baila Sola</td>
+      <td>2023</td>
+      <td><a href="https://www.apple.com/apple-music/" target="_blank">Apple Music</a></td>
+    </tr>
+    <tr>
+      <td>Cris MJ</td>
+      <td>Urbano / Trap</td>
+      <td>Chile</td>
+      <td>Una Noche en Medellín</td>
+      <td>2022</td>
+      <td><a href="https://open.spotify.com" target="_blank">Spotify</a></td>
+    </tr>
+    <tr>
+      <td>Bad Bunny</td>
+      <td>Reguetón / Trap</td>
+      <td>Puerto Rico</td>
+      <td>Tití Me Preguntó</td>
+      <td>2022</td>
+      <td><a href="https://music.youtube.com" target="_blank">YouTube Music</a></td>
+    </tr>
+    <tr>
+      <td>Natanael Cano</td>
+      <td>Corridos Tumbados</td>
+      <td>México</td>
+      <td>Amor Tumbado</td>
+      <td>2020</td>
+      <td><a href="https://www.deezer.com" target="_blank">Deezer</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<section id="#Cont">
+<footer>
+  <p>© 2025 Tu Nombre o Nombre de tu Proyecto. Todos los derechos reservados.</p>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#galeria">Artistas destacados</a>
+
+    <a href="https://www.ticketmaster.com.mx/?utm_source=TM-google&utm_medium=cpc&utm_campaign=co%3AMX%20%7C%20an%3ATicketmaster%20SEM%202024%20%7C%20obj%3ASales%20%7C%20chl%3AGb%20%7C%20cat%3AGeneric%20%7C%20bud%3ATM%20%7C%20a%3Avarios%20%7C%20tp%3ATMMX%20%7C%20%20%20%7C%20%20%20%7C%20%20%20%7C%20%20%20%7C%20%20&utm_content=an%3ATicketmaster%20SEM%202024%20%7C%20en%3ADinamica%20Reyes%20Magos%20%7C%20aud%3AInt%20%7C%20%20%20%7C%20mt%3An%2Fa%20%7C%20ed%3Avarios%20%7C%20geo%3ACDMX%20%7C%20vn%3Avarios%20%7C%20a%3Avarios%20%7C%20%20%20%7C%20e%3Avarios%20%7C%20%20%20%7C%20%20&utm_term=an%3ATicketmaster%20SEM%202024%20%7C%20ph%3AOth%20%7C%20cn%3AGenerico%20%20%7C%20ct%3A1080x1080%20%7C%20%20&utm_source=TM-google&gad_source=1&gad_campaignid=22114918067&gbraid=0AAAAACmHZugpZOttewprPZ0mBkcSdcIbT&gclid=CjwKCAjwpMTCBhA-EiwA_-MsmSgx3rVEwF2qIEtTufJ4UiGSaedSetdLvTpETbAInVoqQhf9JO6wgRoCv80QAvD_BwE">Eventos</a>
+    <a href="#Cont">Eventos de artistas </a>
+
+    <div class="social-buttons">
+      <a href="https://www.instagram.com/kan_vega09?igsh=M3czamVxYTFnN3dt" target="_blank" aria-label="Instagram" class="social-icon instagram" rel="noopener noreferrer">
+        <!-- Instagram SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-2.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/share/19Gn2zJkxC/" target="_blank" aria-label="Facebook" class="social-icon facebook" rel="noopener noreferrer">
+        <!-- Facebook SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M22 12a10 10 0 1 0-11.6 9.85v-6.96h-2.3v-2.9h2.3v-2.21c0-2.27 1.35-3.53 3.41-3.53.99 0 2.02.18 2.02.18v2.23h-1.14c-1.13 0-1.48.7-1.48 1.42v1.91h2.51l-.4 2.9h-2.11v6.96A10 10 0 0 0 22 12z"/>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@kike.zombie?_t=ZS-8xI9ZUQf4H2&_r=1" target="_blank" aria-label="TikTok" class="social-icon tiktok" rel="noopener noreferrer">
+        <!-- TikTok SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M12.5 2v6.44a3.5 3.5 0 1 1-3.5-3.5h.75v7.75a5.5 5.5 0 1 0 5.5 5.5V7.25h2.5V2h-5.25z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+</section>
+
+  <!-- Mapa -->
+  <div id="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.174535780143!2d-99.19026378467906!3d19.50171634679178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f89c2a8bf6f7%3A0x3d5bb306d5708f6d!2sEcatepec%20de%20Morelos%2C%20Estado%20de%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1687012345678!5m2!1ses!2smx"
+      width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa de Localización">
+    </iframe>
+  </div>
+
+  <!-- Formulario -->
+  <section id="contactForm" aria-label="Formulario de contacto">
+    <h2>Contáctanos</h2>
+    <form id="form" novalidate>
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required minlength="3" />
+
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required />
+
+      <label for="telefono">Teléfono *</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="(55) 1234-5678" pattern="^\(?\d{2,4}\)?[\s.-]?\d{4}[\s.-]?\d{4}$" required />
+
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label for="fecha">Fecha de contacto *</label><br />
+        <input type="date" id="fecha" name="fecha" required style="width: 100%; padding: 8px; border-radius: 5px; border: none;" />
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label for="genero">Género *</label><br />
+        <select id="genero" name="genero" required style="width: 100%; padding: 8px; border-radius: 5px; border: none;">
+          <option value="" disabled selected>Selecciona</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+          <option value="prefiero_no_decir">Prefiero no decir</option>
+        </select>
+      </div>
+
+      <div style="flex: 1 1 45%;">
+        <label for="edad">Edad *</label><br />
+        <input type="number" id="edad" name="edad" required min="12" max="120" placeholder="Edad" style="width: 100%; padding: 8px; border-radius: 5px; border: none;" />
+      </div>
+
+      <div style="flex: 1 1 100%;">
+        <label for="asunto">Asunto *</label><br />
+        <input type="text" id="asunto" name="asunto" required placeholder="Motivo del contacto" style="width: 100%; padding: 8px; border-radius: 5px; border: none;" />
+      </div>
+
+      <div style="flex: 1 1 100%;">
+        <label for="mensaje">Mensaje *</label><br />
+        <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí..." rows="4" style="width: 100%; padding: 8px; border-radius: 5px; border: none;"></textarea>
+      </div>
+
+      <div style="flex: 1 1 100%;">
+        <label><input type="checkbox" id="terminos" name="terminos" required /> Acepto los términos y condiciones *</label>
+      </div>
+
+      <div style="flex: 1 1 100%; text-align: center;">
+        <button type="submit" style="background-color: #00ffff; color: #330000; padding: 12px 30px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s ease;">Enviar</button>
+      </div>
+    </form>
+
+    <p id="formMessage" style="text-align: center; margin-top: 15px;"></p>
+  </section>
+  
+</footer>
+<div class="music-floating" id="musicControl" role="button" tabindex="0" aria-pressed="false" aria-label="Reproducir o pausar música LOLLIPOP DE DARELL">
+    LOLLIPOP DE DARELL
+    <button id="playPauseBtn" aria-label="Reproducir/Pausar música">▶️</button>
+  </div>
+
+  <audio id="audioPlayer" src="Darell - Lollipop (Letra).mp3" preload="auto"></audio>
+
+  <script>
+    const audio = document.getElementById('audioPlayer');
+    const btn = document.getElementById('playPauseBtn');
+    const controlDiv = document.getElementById('musicControl');
+
+    function togglePlayPause() {
+      if(audio.paused){
+        audio.play();
+        btn.textContent = '⏸️';
+        controlDiv.setAttribute('aria-pressed', 'true');
+      } else {
+        audio.pause();
+        btn.textContent = '▶️';
+        controlDiv.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    btn.addEventListener('click', togglePlayPause);
+    controlDiv.addEventListener('click', togglePlayPause);
+    controlDiv.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        togglePlayPause();
+      }
+    });
+  </script>
+ </section>
+  <script>
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formMessage.textContent = '';
+    if (!form.checkValidity()) {
+      formMessage.style.color = 'red';
+      formMessage.textContent = 'Por favor, completa todos los campos correctamente.';
+      form.reportValidity();
+      return;
+    }
+
+    // Validación personalizada para teléfono (10 dígitos numéricos)
+    const telefono = form.telefono.value.trim();
+    const telefonoRegex = /^\d{10}$/;
+    if (!telefonoRegex.test(telefono)) {
+      formMessage.style.color = 'red';
+      formMessage.textContent = 'Por favor ingresa un teléfono válido de 10 dígitos.';
+      form.telefono.focus();
+      return;
+    }
+
+    // Validación de edad entre 12 y 120
+    const edad = parseInt(form.edad.value, 10);
+    if (edad < 12 || edad > 120) {
+      formMessage.style.color = 'red';
+      formMessage.textContent = 'Por favor ingresa una edad válida entre 12 y 120 años.';
+      form.edad.focus();
+      return;
+    }
+
+    // Si todo es válido:
+    formMessage.style.color = '#00ffff';
+    formMessage.textContent = '¡Gracias por contactarnos! Tu mensaje ha sido enviado.';
+
+    form.reset();
+  });
+</script>
+<script>
+  const modalAviso = document.getElementById('modalAviso');
+  const btnCerrarAviso = document.getElementById('btnCerrarAviso');
+
+  btnCerrarAviso.addEventListener('click', () => {
+    modalAviso.style.display = 'none';
+  });
+</script>
+
+
